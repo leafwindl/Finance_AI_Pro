@@ -1,0 +1,192 @@
+/* ================================================================
+   File Upload Input — file chip list, status indicators
+   ================================================================ */
+
+/* ---- Container ---- */
+.fu-file-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 0 10px;
+}
+
+/* ---- Single chip: icon left + body right ---- */
+.fu-file-chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 220px;
+  padding: 8px 12px;
+  border: 1px solid var(--el-border-color);
+  border-radius: 8px;
+  background: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  cursor: default;
+}
+
+html.dark .fu-file-chip {
+  border-color: var(--el-border-color);
+  background: var(--el-fill-color);
+}
+
+.fu-file-chip:hover {
+  border-color: var(--el-color-primary-light-5);
+  box-shadow: 0 1px 4px rgba(15, 108, 189, 0.08);
+}
+
+.fu-file-chip.is-uploading {
+  border-color: var(--el-color-primary-light-7);
+  background: var(--el-color-primary-light-9);
+}
+
+.fu-file-chip.is-error {
+  border-color: var(--el-color-danger-light-7);
+  background: var(--el-color-danger-light-9);
+}
+
+/* ---- Big icon badge (left side) ---- */
+.fu-file-chip__icon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  place-items: center;
+}
+
+/* ---- Body (right side, two rows) ---- */
+.fu-file-chip__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* ---- Row ---- */
+.fu-file-chip__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.fu-file-chip__sub {
+  font-size: 11px;
+  gap: 8px;
+}
+
+/* ---- Filename (truncated) ---- */
+.fu-file-chip__name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--el-text-color-primary);
+}
+
+/* ---- Type label ---- */
+.fu-file-chip__type {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 3px;
+  background: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+  flex-shrink: 0;
+}
+
+.is-error .fu-file-chip__type {
+  background: var(--el-color-danger-light-8);
+  color: var(--el-color-danger);
+}
+
+/* ---- Size ---- */
+.fu-file-chip__size {
+  color: var(--el-text-color-secondary);
+  flex-shrink: 0;
+}
+
+/* ---- Status ---- */
+.fu-file-chip__status {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.fu-spin {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--el-color-primary-light-7);
+  border-top-color: var(--el-color-primary);
+  border-radius: 50%;
+  animation: fu-spin 0.7s linear infinite;
+}
+
+@keyframes fu-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---- Remove button ---- */
+.fu-chip-retry {
+  flex-shrink: 0;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  color: var(--el-color-primary);
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  place-items: center;
+  transition: color 0.15s, background 0.15s;
+}
+
+.fu-chip-retry:hover {
+  background: var(--el-color-primary-light-9);
+}
+
+.fu-chip-remove {
+  flex-shrink: 0;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  color: var(--el-text-color-placeholder);
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  place-items: center;
+  transition: color 0.15s, background 0.15s;
+}
+
+.fu-chip-remove:hover {
+  color: var(--el-color-danger);
+  background: var(--el-color-danger-light-9);
+}
+
+.fu-chip-remove:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ---- Hidden file input ---- */
+.fu-file-trigger {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .fu-file-chip {
+    width: 100%;
+  }
+}

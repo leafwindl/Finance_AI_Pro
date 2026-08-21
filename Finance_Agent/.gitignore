@@ -1,0 +1,71 @@
+# ===== 环境变量 =====
+.env
+.env.local
+.env.*.local
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+*.whl
+
+# ===== 虚拟环境 =====
+.venv/
+venv/
+env/
+ENV/
+
+# ===== 测试 & 覆盖率 =====
+.pytest_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+
+# ===== 类型检查 & Linter =====
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# ===== ChromaDB / 数据库 =====
+chroma_db/
+*.db
+*.sqlite
+*.sqlite3
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===== 日志 =====
+*.log
+logs/
+
+# ===== 运行时数据 =====
+uploads/
+temp/
+tmp/
+
+# ===== 密钥 & 证书 =====
+*.pem
+*.key
+*.crt
+
+# Vite 依赖预构建缓存
+**/.vite/

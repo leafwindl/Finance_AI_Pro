@@ -1,0 +1,27 @@
+{
+  "name": "finance-ai-vue",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "dompurify": "^3.4.12",
+    "element-plus": "^2.10.5",
+    "force-graph": "^1.51.4",
+    "highlight.js": "^11.11.1",
+    "marked": "^18.0.7",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "playwright-core": "^1.62.1",
+    "vite": "^5.3.1"
+  }
+}

@@ -1,0 +1,17 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.npm-cache/
